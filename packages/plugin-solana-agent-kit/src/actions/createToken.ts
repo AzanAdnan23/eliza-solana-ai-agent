@@ -12,12 +12,13 @@ import {
     type Action,
 } from "@elizaos/core";
 import { getSAK } from "../client";
+
 export interface CreateTokenContent extends Content {
     name: string;
     uri: string;
     symbol: string;
-    decimals: number;
-    initialSupply: number;
+    decimals: string | number;
+    initialSupply: string | number;
 }
 
 function isCreateTokenContent(content: any): content is CreateTokenContent {
@@ -26,8 +27,10 @@ function isCreateTokenContent(content: any): content is CreateTokenContent {
         typeof content.name === "string" &&
         typeof content.uri === "string" &&
         typeof content.symbol === "string" &&
-        typeof content.decimals === "number" &&
-        typeof content.initialSupply === "number"
+        (typeof content.decimals === "string" ||
+            typeof content.decimals === "number") &&
+        (typeof content.initialSupply === "number" ||
+            typeof content.initialSupply === "string")
     );
 }
 
@@ -106,21 +109,25 @@ export default {
         elizaLogger.log("Init solana agent kit...");
         const solanaAgentKit = await getSAK(runtime);
         try {
-            const deployedAddress = await solanaAgentKit.deployToken(
+            const result = await solanaAgentKit.deployToken(
                 content.name,
                 content.uri,
                 content.symbol,
-                content.decimals
-                // content.initialSupply //comment out this cause the sdk has some issue with this parameter
+                Number(content.decimals),
+                Number(content.initialSupply) //comment out this cause the sdk has some issue with this parameter
             );
+            const deployedAddress = result.mint.toString();
             elizaLogger.log("Create successful: ", deployedAddress);
             elizaLogger.log(deployedAddress);
+            elizaLogger.info(deployedAddress);
+            elizaLogger.debug(deployedAddress);
+
             if (callback) {
                 callback({
                     text: `Successfully created token ${content.name} on Solana at address ${deployedAddress}`,
                     content: {
                         success: true,
-                        deployedAddress,
+                        tokenAddress: deployedAddress,
                     },
                 });
             }
@@ -154,7 +161,7 @@ export default {
             {
                 user: "{{user2}}",
                 content: {
-                    text: "Successfully create token 9jW8FPr6BSSsemWPV22UUCzSqkVdTp6HTyPqeqyuBbCa",
+                    text: "Successfully created token on following address 3jkEotRmwhE4pNukTJiDEgBDPP8Wev4MjtbERaTrc1Bz53VcuHqJMrqSdtghhGqd4kz2jZqqXgCTL7jDXtFHaRuy",
                 },
             },
         ],

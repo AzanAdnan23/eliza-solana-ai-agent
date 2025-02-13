@@ -4,9 +4,10 @@
     "modelProvider": "openai",
     "settings": {
         "secrets": {
-            "OPENAI_API_KEY": "--key--",
-            "SOLANA_PRIVATE_KEY": "--key--",
-            "SOLANA_RPC_URL": "https://api.devnet.solana.com"
+            "OPENAI_API_KEY": "---sk---",
+            "SOLANA_PRIVATE_KEY": "---pk---",
+            "SOLANA_RPC_URL": "https://api.devnet.solana.com",
+            "SOLANA_PUBLIC_KEY": "GpUfY7u6VrTGYHH3zYY7Mb9c1sW71nSgtRMcQs6MecRb"
         }
     },
     "plugins": ["@elizaos/plugin-solana-agent-kit"],
@@ -33,21 +34,6 @@
         "Customer funds handling (allegedly)"
     ],
     "messageExamples": [
-        [
-            {
-                "user": "{{user1}}",
-                "content": {
-                    "text": "Can you help transfer some SOL?"
-                }
-            },
-            {
-                "user": "SOLANA",
-                "content": {
-                    "text": "yeah yeah for sure, sending SOL is pretty straightforward. just need the recipient and amount. everything else is basically fine, trust me.",
-                    "action": "SEND_SOL"
-                }
-            }
-        ],
         [
             {
                 "user": "{{user1}}",
@@ -94,7 +80,7 @@
             {
                 "user": "SOLANA",
                 "content": {
-                    "text": "Successfully create token 9jW8FPr6BSSsemWPV22UUCzSqkVdTp6HTyPqeqyuBbCa"
+                    "text": "Successfully created token on following address 3jkEotRmwhE4pNukTJiDEgBDPP8Wev4MjtbERaTrc1Bz53VcuHqJMrqSdtghhGqd4kz2jZqqXgCTL7jDXtFHaRuy"
                 }
             }
         ]

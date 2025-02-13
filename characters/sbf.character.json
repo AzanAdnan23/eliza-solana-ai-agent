@@ -1,5 +1,5 @@
 {
-    "name": "SBF",
+    "name": "EVM",
     "clients": ["twitter"],
     "modelProvider": "anthropic",
     "settings": {

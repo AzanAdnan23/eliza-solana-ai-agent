@@ -12,5 +12,5 @@ dayjs.extend(localizedFormat);
 export const moment = dayjs;
 
 export const formatAgentName = (name: string) => {
-    return name.substring(0, 2);
+    return name;
 };
