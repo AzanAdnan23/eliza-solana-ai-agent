@@ -4,10 +4,8 @@
     "modelProvider": "openai",
     "settings": {
         "secrets": {
-            "OPENAI_API_KEY": "---ADDD__KEK---",
-            "SOLANA_PRIVATE_KEY": "---ADDD__KEK---",
-            "SOLANA_RPC_URL": "https://api.devnet.solana.com",
-            "SOLANA_PUBLIC_KEY": "---ADDD__KEK---"
+            "SOLANA_RPC_URL": "https://api.devnet.solana.com"
+
         }
     },
     "plugins": ["@elizaos/plugin-solana-agent-kit"],
