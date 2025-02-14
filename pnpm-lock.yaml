@@ -3189,7 +3189,7 @@ importers:
         version: link:../core
       hyperliquid:
         specifier: ^1.5.6
-        version: 1.5.8(bufferutil@4.0.9)(utf-8-validate@6.0.5)
+        version: 1.6.2(bufferutil@4.0.9)(utf-8-validate@6.0.5)
     devDependencies:
       '@types/node':
         specifier: ^20.0.0
@@ -4517,7 +4517,7 @@ importers:
         version: link:../core
       '@spheron/protocol-sdk':
         specifier: ^1.0.0
-        version: 1.3.2(bufferutil@4.0.9)(utf-8-validate@6.0.5)
+        version: 1.3.3(bufferutil@4.0.9)(utf-8-validate@6.0.5)
     devDependencies:
       '@biomejs/biome':
         specifier: 1.5.3
@@ -13211,8 +13211,8 @@ packages:
   '@soncodi/signal@2.0.7':
     resolution: {integrity: sha512-zA2oZluZmVvgZEDjF243KWD1S2J+1SH1MVynI0O1KRgDt1lU8nqk7AK3oQfW/WpwT51L5waGSU0xKF/9BTP5Cw==}
 
-  '@spheron/protocol-sdk@1.3.2':
-    resolution: {integrity: sha512-i2foPlRsLXnQvuhg9N39AUU65WHBQqHgp9o7kTkkRep3mrpAA4R5URqS+Dl7jV65b9YMvwr35wrMmdPaOHMkdA==}
+  '@spheron/protocol-sdk@1.3.3':
+    resolution: {integrity: sha512-+/iKqdNrdrJBAp+WiCN/pFw1eohVK3JIDhTnSba9+FOmESMGmPZ4e05mrydEM9TLAX2BEniCni2q1l8m+sKRkQ==}
 
   '@spruceid/siwe-parser@1.1.3':
     resolution: {integrity: sha512-oQ8PcwDqjGWJvLmvAF2yzd6iniiWxK0Qtz+Dw+gLD/W5zOQJiKIUXwslHOm8VB8OOOKW9vfR3dnPBhHaZDvRsw==}
@@ -19750,8 +19750,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  hyperliquid@1.5.8:
-    resolution: {integrity: sha512-y3gJ8Z77UZYlJov234EQXGajTzKhFd+Vp9vL96sIogFeylkObh1ut7/hpznDlEBDgZi3ij0dIf8dYrRZ1DzW2g==}
+  hyperliquid@1.6.2:
+    resolution: {integrity: sha512-ENrYysYHd3Zzgl+SE039QFBpYd5dRX6177rn3pU+w9SRYMaieEGCL+Qzb8wrw679CIJn1VnGSSKJmjCdDHfAwA==}
     engines: {node: '>=16.0.0'}
 
   iconv-lite@0.4.24:
@@ -45618,7 +45618,7 @@ snapshots:
 
   '@soncodi/signal@2.0.7': {}
 
-  '@spheron/protocol-sdk@1.3.2(bufferutil@4.0.9)(utf-8-validate@6.0.5)':
+  '@spheron/protocol-sdk@1.3.3(bufferutil@4.0.9)(utf-8-validate@6.0.5)':
     dependencies:
       base64-js: 1.5.1
       ethers: 6.13.5(bufferutil@4.0.9)(utf-8-validate@6.0.5)
@@ -55697,14 +55697,11 @@ snapshots:
 
   husky@9.1.7: {}
 
-  hyperliquid@1.5.8(bufferutil@4.0.9)(utf-8-validate@6.0.5):
+  hyperliquid@1.6.2(bufferutil@4.0.9)(utf-8-validate@6.0.5):
     dependencies:
       '@msgpack/msgpack': 3.0.1
-      '@types/ws': 8.5.14
       axios: 1.7.9
       ethers: 6.13.5(bufferutil@4.0.9)(utf-8-validate@6.0.5)
-      typescript: 5.7.3
-      ws: 8.18.0(bufferutil@4.0.9)(utf-8-validate@6.0.5)
     transitivePeerDependencies:
       - bufferutil
       - debug
