@@ -179,7 +179,15 @@ export default {
 
             if (callback) {
                 callback({
-                    text: `Successfully created raydium liquidity pool ${content.name} on Solana at address ${txId}`,
+                     text: `Successfully created raydium liquidity pool  on Solana at address ${txId} with pool keys: ${JSON.stringify(Object.keys(extInfo.address).reduce(
+                        (acc, cur) => ({
+                            ...acc,
+                            [cur]: extInfo.address[cur as keyof typeof extInfo.address].toString(),
+                        }),
+                        {}
+                    ),
+                    null,
+                    2)}`,
                     content: {
                         success: true,
                         tokenAddress: txId,
